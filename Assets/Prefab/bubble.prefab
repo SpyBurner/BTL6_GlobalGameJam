@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 1287778357106503623}
   - component: {fileID: -2827414139230954945}
   - component: {fileID: 2005311759084420797}
-  - component: {fileID: -2417423059237142087}
   m_Layer: 3
   m_Name: bubble
   m_TagString: Untagged
@@ -101,9 +100,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 244911c4e3d9da846a2f5164c5698ac4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isHead: 0
   previousNode: {fileID: 0}
   nextNode: {fileID: 0}
-  maxDistance: 1.5
+  maxDistance: 1
   isCaptured: 0
 --- !u!50 &1287778357106503623
 Rigidbody2D:
@@ -139,7 +139,7 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 1}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1
 --- !u!114 &2005311759084420797
@@ -154,33 +154,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3402a0d65d4c55942bbe01e99cd8c052, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 0
+  maxHP: 1
   currentHP: 0
   DeathEvent:
     m_PersistentCalls:
       m_Calls: []
   speed: 0
-  isDead: 0
-  invincibleTime: 0.5
-  isInvincible: 0
---- !u!114 &-2417423059237142087
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8171610857931487393}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3402a0d65d4c55942bbe01e99cd8c052, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHP: 3
-  currentHP: 0
-  DeathEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  speed: 0
+  damage: 1
   isDead: 0
   invincibleTime: 0.5
   isInvincible: 0

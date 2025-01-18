@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 206a127c6a1ba2f448b498bb653d4da3
+guid: c220791d6ee969b4490975b48da7736a
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -95,7 +95,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638727981938702987
+  platformSettingsDirtyTick: 638728119151939326
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -119,18 +119,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: bubble
+  - name: Harpoon_Projectile
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 32
-      height: 32
-    spriteID: 626aed396efc77b49b7fd5f18945e105
+      width: 16
+      height: 5
+    spriteID: 58e92922db408ae4c931047fbd95c0bc
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -142,20 +142,20 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 204499436
-    name: bubble
+    guid: 835997599
+    name: Harpoon_Projectile
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: bubble
+    - name: Harpoon_Projectile
       frameIndex: 0
       cellRect:
         x: 0
         y: 0
-        width: 32
-        height: 32
-      spriteId: 626aed396efc77b49b7fd5f18945e105
+        width: 16
+        height: 5
+      spriteId: 58e92922db408ae4c931047fbd95c0bc
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -184,4 +184,4 @@ ScriptedImporter:
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 32, y: 32}
+  canvasSize: {x: 16, y: 5}

@@ -29,7 +29,7 @@ public class PlayerControl : MonoBehaviour
     private void Update()
     {
         if (stat.isDead) return;
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(1))
         {
             lastClick = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Debug.Log(lastClick);
