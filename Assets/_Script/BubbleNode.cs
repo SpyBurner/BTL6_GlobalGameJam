@@ -88,6 +88,10 @@ public class BubbleNode : MonoBehaviour
 
     private void OnDestroy()
     {
+        if (isHead)
+        {
+            return;
+        }
         if (nextNode)
         {
             nextNode.previousNode = null;

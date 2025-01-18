@@ -28,6 +28,7 @@ public class UIManager : MonoBehaviour
         gameplayCanvas.enabled = false;
 
         ammo.OutOfAirEvent.AddListener(() => OpenUI(true));
+        playerStat.DeathEvent.AddListener(() => OpenUI(true));
     }
 
     public void OpenUI(bool discardFish = false)
