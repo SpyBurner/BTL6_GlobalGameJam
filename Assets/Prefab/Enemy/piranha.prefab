@@ -228,7 +228,7 @@ MonoBehaviour:
   isDead: 0
   invincibleTime: 0.5
   isInvincible: 0
-  price: 1
+  price: 5
 --- !u!95 &9025648366890337830
 Animator:
   serializedVersion: 5
