@@ -12,6 +12,7 @@ public class UIManager : MonoBehaviour
     public GameManager gameManager;
     public Canvas UI;
     public PlayerControl player;
+    public Transform spawn;
     void Start()
     {
         player.enabled = false;
@@ -76,5 +77,6 @@ public class UIManager : MonoBehaviour
         ammo.currentHarpoon = ammo.maxHarpoon;
         UI.enabled = false;
         player.enabled = true;
+        player.GetComponent<Transform>().position = spawn.position;
     }
 }
