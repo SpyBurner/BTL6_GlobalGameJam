@@ -27,3 +27,4 @@ public class LookAtCursor : MonoBehaviour
         float flipAngle = Vector2.SignedAngle(originalUp, direction);
         spriteRenderer.flipX = flipAngle > 0;
     }
+}
