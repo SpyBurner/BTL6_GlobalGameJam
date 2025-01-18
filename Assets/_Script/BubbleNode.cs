@@ -6,6 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class BubbleNode : MonoBehaviour
 {
+    public bool isHead = false;
     public BubbleNode previousNode = null;
     public BubbleNode nextNode = null;
 
@@ -20,12 +21,27 @@ public class BubbleNode : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         stat = GetComponent<Stat>();
+        stat.DeathEvent.AddListener(OnDestroy);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!previousNode) return;
+        if (!previousNode)
+        {
+            if (!isHead)
+            {
+                isCaptured = false;
+                if (nextNode)
+                {
+                    nextNode.previousNode = null;
+                    nextNode = null;
+                }
+            }
+
+            rb.velocity = Vector2.zero;
+            return;
+        }
         if (Vector3.Distance(transform.position, previousNode.transform.position) > maxDistance)
         {
             Vector3 direction = (previousNode.transform.position - transform.position).normalized;
@@ -42,7 +58,7 @@ public class BubbleNode : MonoBehaviour
         if (collision.gameObject.GetComponent<BubbleNode>() && !isCaptured)
         {
             BubbleNode bubbleNode = collision.gameObject.GetComponent<BubbleNode>();
-            if (bubbleNode.isCaptured)
+            if (bubbleNode.isHead)
             {
                 while (bubbleNode.nextNode != null)
                 {
@@ -54,11 +70,17 @@ public class BubbleNode : MonoBehaviour
             }
             return;
         }
+    }
 
-        if (collision.gameObject.CompareTag("Enemy"))
+    private void OnDestroy()
+    {
+        if (nextNode)
         {
-            stat.TakeDamage(1);
-            return;
+            nextNode.previousNode = null;
+        }
+        if (previousNode)
+        {
+            previousNode.nextNode = null;
         }
     }
 }
