@@ -13,6 +13,11 @@ public abstract class BaseWeapon: MonoBehaviour
 
     public GameObject projectilePrefab;
 
+    private void OnEnable()
+    {
+        isOnCooldown = false;
+    }
+
     public abstract void Shoot();
     public IEnumerator Cooldown()
     {
