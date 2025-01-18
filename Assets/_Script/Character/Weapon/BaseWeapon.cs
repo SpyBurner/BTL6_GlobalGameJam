@@ -23,13 +23,13 @@ public abstract class BaseWeapon: MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetKeyDown((KeyCode)shootKey) && !isOnCooldown)
+        if (Input.GetKey((KeyCode)shootKey) && !isOnCooldown)
         {
             Shoot();
             StartCoroutine(Cooldown());
         }
 
-        if (Input.GetKeyDown((KeyCode)inventoryKey))
+        if (Input.GetKey((KeyCode)inventoryKey))
         {
             Debug.Log("Switching to weapon: " + gameObject.name);
         }

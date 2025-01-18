@@ -63,7 +63,7 @@ public class Stat : MonoBehaviour, IDamagable
         isInvincible = false;
     }
 
-    void Awake()
+    protected void Awake()
     {
         currentHP = maxHP;
 

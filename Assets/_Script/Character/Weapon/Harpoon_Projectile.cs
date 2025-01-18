@@ -48,7 +48,7 @@ public class Harpoon_Projectile : MonoBehaviour
         rb.isKinematic = true;
         rb.velocity = Vector2.zero;
 
-        Destroy(GetComponent<ContactDamage>());
+        //Destroy(GetComponent<ContactDamage>());
     }
 
 }

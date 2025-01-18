@@ -29,7 +29,7 @@ public class PlayerControl : MonoBehaviour
     private void Update()
     {
         if (stat.isDead) return;
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButton(1))
         {
             lastClick = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             //Debug.Log(lastClick);
@@ -52,10 +52,5 @@ public class PlayerControl : MonoBehaviour
         transform.up = rb.velocity.magnitude < moveMargin * 5 ? Vector2.up : lastDirection;
         sr.flipX = lastDirection.x < 0;
 
-
-        if (Input.GetMouseButtonDown(1))
-        {
-
-        }
     }
 }

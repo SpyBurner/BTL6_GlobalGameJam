@@ -14,12 +14,12 @@ public class BasicAI : MonoBehaviour
 
     public float detectRange = 5f;
 
-    private Stat stat;
-    private Rigidbody2D rb;
-    private SpriteRenderer sr;
+    protected Stat stat;
+    protected Rigidbody2D rb;
+    protected SpriteRenderer sr;
 
     // Start is called before the first frame update
-    void Start()
+    protected void Start()
     {
         stat = GetComponent<Stat>();
         rb = GetComponent<Rigidbody2D>();
@@ -27,14 +27,13 @@ public class BasicAI : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    protected void Update()
     {
         if (stat.isDead) return;
         if (target == null)
             Patrol();
     }
-
-    void Patrol()
+    protected void Patrol()
     {
         RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, patrolDirection, patrolWallDetectionRange);
         //Debug.Log(hits.Length);
@@ -57,29 +56,5 @@ public class BasicAI : MonoBehaviour
         sr.flipX = patrolDirection.x > 0;
     }
 
-    void Chase()
-    {
-        Vector2 direction = target.transform.position - transform.position;
-
-        RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, direction, detectRange);
-        bool isTargetVisible = true;
-
-        foreach (var hit in hits)
-        {
-            if (hit.collider.CompareTag("Terrain"))
-            {
-                isTargetVisible = false;
-                break;
-            }
-        }
-
-        if (isTargetVisible)
-        {
-            rb.velocity = direction.normalized * stat.speed;
-        }
-        else
-        {
-            target = null;
-        }
-    }
+   
 }

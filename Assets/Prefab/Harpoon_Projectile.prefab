@@ -103,6 +103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetLayer: 7
   damage: 1
+  destroyOnContact: 1
 --- !u!114 &7438918930040002068
 MonoBehaviour:
   m_ObjectHideFlags: 0
