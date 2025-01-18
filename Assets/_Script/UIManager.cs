@@ -96,7 +96,7 @@ public class UIManager : MonoBehaviour
         if (gameManager.Money < gameManager.airPrice) return;
         ammo.maxAir += (ammo.maxAir * 20/100);
         gameManager.Money -= gameManager.airPrice;
-        gameManager.airPrice += 2;
+        gameManager.airPrice *= 2;
     }
     public void upSpeed()
     {
@@ -115,7 +115,7 @@ public class UIManager : MonoBehaviour
     public void upArmor()
     {
         if (gameManager.Money < gameManager.hpPrice) return;
-        playerStat.maxHP = playerStat.maxHP * 110 / 100;
+        playerStat.maxHP = playerStat.maxHP + 1;
         gameManager.Money -= gameManager.hpPrice;
         gameManager.hpPrice *= 2;
     }

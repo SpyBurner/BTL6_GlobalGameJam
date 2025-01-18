@@ -147,7 +147,7 @@ MonoBehaviour:
   isDead: 0
   invincibleTime: 1
   isInvincible: 0
-  price: 1
+  price: 2
 --- !u!114 &1232180804334463449
 MonoBehaviour:
   m_ObjectHideFlags: 0

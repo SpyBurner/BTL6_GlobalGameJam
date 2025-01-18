@@ -64,6 +64,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetLayer: 3
   damage: 1
+  destroyOnContact: 0
 --- !u!114 &734927023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,6 +79,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetLayer: 6
   damage: 1
+  destroyOnContact: 0
 --- !u!1 &3151886298561816290
 GameObject:
   m_ObjectHideFlags: 0
@@ -241,4 +243,4 @@ MonoBehaviour:
   isDead: 0
   invincibleTime: 0.5
   isInvincible: 0
-  price: 6
+  price: 15
