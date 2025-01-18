@@ -25,5 +25,6 @@ public class LookAtCursor : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, angle);
 
         float flipAngle = Vector2.SignedAngle(originalUp, direction);
-        spriteRenderer.flipX = flipAngle > 0;
+        spriteRenderer.flipY = flipAngle > 0;
     }
+}

@@ -32,7 +32,7 @@ public class PlayerControl : MonoBehaviour
         if (Input.GetMouseButtonDown(1))
         {
             lastClick = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Debug.Log(lastClick);
+            //Debug.Log(lastClick);
         }
 
 
@@ -51,5 +51,11 @@ public class PlayerControl : MonoBehaviour
 
         transform.up = rb.velocity.magnitude < moveMargin * 5 ? Vector2.up : lastDirection;
         sr.flipX = lastDirection.x < 0;
+
+
+        if (Input.GetMouseButtonDown(1))
+        {
+
+        }
     }
 }

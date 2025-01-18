@@ -11,8 +11,6 @@ public class Stat : MonoBehaviour, IDamagable
 
     public float speed;
 
-    public int damage = 1;
-
     public bool isDead = false;
 
     public float invincibleTime = 0.5f;

@@ -4,20 +4,15 @@ using UnityEngine;
 
 public class ContactDamage : MonoBehaviour
 {
-    private Collider2D attackBox;
-    private Stat stat;
-    void Awake()
-    {
-        attackBox = GetComponent<Collider2D>();
-        stat = transform.parent.GetComponent<Stat>();
-    }
+    public int targetLayer;
+    public int damage = 1;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<IDamagable>() != null)
+        if (collision.gameObject.GetComponent<IDamagable>() != null && collision.gameObject.layer == targetLayer)
         {
             IDamagable damagable = collision.gameObject.GetComponent<IDamagable>();
-            damagable.TakeDamage(stat.damage);
+            damagable.TakeDamage(damage);
         }
     }
 }

@@ -15,10 +15,11 @@ GameObject:
   - component: {fileID: 3702258151155762046}
   - component: {fileID: 3702258151155762017}
   - component: {fileID: 3702258151155762016}
+  - component: {fileID: 591806410764809114}
   - component: {fileID: 3702258151155762018}
   m_Layer: 6
   m_Name: player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -167,9 +168,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   speed: 50
-  damage: 1
   isDead: 0
-  invincibleTime: 0.5
+  invincibleTime: 1
   isInvincible: 0
 --- !u!114 &3702258151155762016
 MonoBehaviour:
@@ -184,6 +184,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveMargin: 0.1
+--- !u!114 &591806410764809114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4882753718459406813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40ec9ac874bc7e34e97ca56b75c3c725, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxAir: 100
+  currentAir: 0
+  airDrainRate: 0.2
+  OutOfAirEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  maxHarpoon: 3
+  currentHarpoon: 0
 --- !u!114 &3702258151155762018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,6 +216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 244911c4e3d9da846a2f5164c5698ac4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  direction: {x: 1, y: 0}
   isHead: 1
   previousNode: {fileID: 0}
   nextNode: {fileID: 0}
@@ -210,7 +231,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -2253911629886400664, guid: 14186459ba94bb144945439a070b632a, type: 3}
       propertyPath: m_Name
-      value: Harpoon
+      value: weapon
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: 14186459ba94bb144945439a070b632a, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: 14186459ba94bb144945439a070b632a, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1012966079
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 14186459ba94bb144945439a070b632a, type: 3}
       propertyPath: m_RootOrder
@@ -263,3 +292,59 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7878350319992209165, guid: 14186459ba94bb144945439a070b632a, type: 3}
   m_PrefabInstance: {fileID: 6385080837788856827}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4045396166499706515 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -2253911629886400664, guid: 14186459ba94bb144945439a070b632a, type: 3}
+  m_PrefabInstance: {fileID: 6385080837788856827}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6385080837000285874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4045396166499706515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c979d3db126cda4baee6e6aa60e2d61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalForward: {x: 1, y: 0}
+  originalUp: {x: 0, y: 1}
+--- !u!114 &6385080837000285877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4045396166499706515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43f1278ed09b99748ac39c97f0c0e897, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireRate: 0.5
+  damage: 1
+  shootKey: 323
+  inventoryKey: 49
+  isOnCooldown: 0
+  projectilePrefab: {fileID: 4053250275985781528, guid: cdb2c0aa235d6854ca20e1237c900912, type: 3}
+--- !u!114 &6385080837000285878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4045396166499706515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39345e34e477d7a4b9821f38292b5b89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireRate: 1
+  damage: 0
+  shootKey: 113
+  inventoryKey: 50
+  isOnCooldown: 0
+  projectilePrefab: {fileID: 8171610857931487393, guid: 82045c702e511e24981d8b902ee521e6, type: 3}
+  airPerShot: 1
