@@ -66,8 +66,11 @@ public class UIManager : MonoBehaviour
 
         gameManager.Money += totalMoney;
 
+
+
         //Open UI
         player.gameObject.SetActive(false);
+        playerStat.isDead = false;
         UI.enabled = true;
         gameplayCanvas.enabled = false;
     }
