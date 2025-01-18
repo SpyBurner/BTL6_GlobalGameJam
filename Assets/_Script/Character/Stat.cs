@@ -11,8 +11,6 @@ public class Stat : MonoBehaviour, IDamagable
 
     public float speed;
 
-    public int damage = 1;
-
     public bool isDead = false;
 
     public float invincibleTime = 0.5f;
@@ -48,6 +46,13 @@ public class Stat : MonoBehaviour, IDamagable
 
     public void OnDeath()
     {
+        ContactDamage[] contactDamages = GetComponentsInChildren<ContactDamage>();
+
+        foreach (var contactDamage in contactDamages)
+        {
+            Destroy(contactDamage);
+        }
+
         //Destroy(gameObject);
     }
 
@@ -58,7 +63,7 @@ public class Stat : MonoBehaviour, IDamagable
         isInvincible = false;
     }
 
-    void Awake()
+    protected void Awake()
     {
         currentHP = maxHP;
 

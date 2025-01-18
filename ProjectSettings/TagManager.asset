@@ -4,9 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Bubble
   - Enemy
   - Terrain
+  - Bubble
   layers:
   - Default
   - TransparentFX
@@ -18,7 +18,7 @@ TagManager:
   - Enemy
   - PlayerProjectile
   - EnemyProjectile
-  - 
+  - Terrain
   - 
   - 
   - 

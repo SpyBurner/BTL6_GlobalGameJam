@@ -121,15 +121,15 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: Harpoon_Projectile
     originalName: 
-    pivot: {x: 0.5, y: 0}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 16
-      height: 5
+      width: 32
+      height: 10
     spriteID: 58e92922db408ae4c931047fbd95c0bc
     spriteBone: []
     spriteOutline: []
@@ -153,8 +153,8 @@ ScriptedImporter:
       cellRect:
         x: 0
         y: 0
-        width: 16
-        height: 5
+        width: 32
+        height: 10
       spriteId: 58e92922db408ae4c931047fbd95c0bc
     linkedCells: []
     parentIndex: -1
@@ -184,4 +184,4 @@ ScriptedImporter:
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 16, y: 5}
+  canvasSize: {x: 32, y: 10}

@@ -6,6 +6,9 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class BubbleNode : MonoBehaviour
 {
+    public Vector2 direction = Vector2.right;
+    public float launchForce;
+
     public bool isHead = false;
     public BubbleNode previousNode = null;
     public BubbleNode nextNode = null;
@@ -17,11 +20,13 @@ public class BubbleNode : MonoBehaviour
     private Stat stat;
 
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         stat = GetComponent<Stat>();
         stat.DeathEvent.AddListener(OnDestroy);
+
+        rb.AddForce(direction * launchForce, ForceMode2D.Impulse);
     }
 
     // Update is called once per frame
@@ -39,7 +44,6 @@ public class BubbleNode : MonoBehaviour
                 }
             }
 
-            rb.velocity = Vector2.zero;
             return;
         }
         if (Vector3.Distance(transform.position, previousNode.transform.position) > maxDistance)
@@ -53,9 +57,9 @@ public class BubbleNode : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<BubbleNode>() && !isCaptured)
+        if (collision.gameObject.GetComponent<BubbleNode>() && !isCaptured && transform.childCount > 1)
         {
             BubbleNode bubbleNode = collision.gameObject.GetComponent<BubbleNode>();
             if (bubbleNode.isHead)
@@ -70,6 +74,16 @@ public class BubbleNode : MonoBehaviour
             }
             return;
         }
+
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            if (!collision.gameObject.GetComponent<Stat>().isDead || transform.childCount > 1) return;
+            
+            collision.gameObject.transform.parent = transform;
+            collision.gameObject.transform.localPosition = Vector3.zero;
+
+            collision.gameObject.GetComponent<Rigidbody2D>().simulated = false;
+        }
     }
 
     private void OnDestroy()
@@ -82,5 +96,15 @@ public class BubbleNode : MonoBehaviour
         {
             previousNode.nextNode = null;
         }
+
+        if (transform.childCount > 1)
+        {
+            transform.GetChild(1).GetComponent<Rigidbody2D>().simulated = true;
+            transform.GetChild(1).parent = null;
+
+            Destroy(transform.GetChild(0).gameObject);
+        }
+
+        Destroy(gameObject);
     }
 }
