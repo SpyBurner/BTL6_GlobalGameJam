@@ -121,8 +121,8 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: player_Frame_0
     originalName: 
-    pivot: {x: 0.53333336, y: -0.074074075}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -141,8 +141,8 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 4}
   - name: player_Frame_1
     originalName: 
-    pivot: {x: 0.53333336, y: -0.07692308}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -161,8 +161,8 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 74}
   - name: player_Frame_2
     originalName: 
-    pivot: {x: 0.53333336, y: -0.083333336}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -181,8 +181,8 @@ ScriptedImporter:
     uvTransform: {x: 50, y: 4}
   - name: player_Frame_3
     originalName: 
-    pivot: {x: 0.53333336, y: -0.074074075}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -201,8 +201,8 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 39}
   - name: player_Frame_4
     originalName: 
-    pivot: {x: 0.53333336, y: -0.07692308}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -221,8 +221,8 @@ ScriptedImporter:
     uvTransform: {x: 27, y: 4}
   - name: player_Frame_5
     originalName: 
-    pivot: {x: 0.53333336, y: -0.08}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -241,8 +241,8 @@ ScriptedImporter:
     uvTransform: {x: 27, y: 38}
   - name: player_Frame_6
     originalName: 
-    pivot: {x: 0.53333336, y: -0.083333336}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -261,8 +261,8 @@ ScriptedImporter:
     uvTransform: {x: 50, y: 36}
   - name: player_Frame_7
     originalName: 
-    pivot: {x: 0.53333336, y: -0.08}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -292,7 +292,7 @@ ScriptedImporter:
       frameIndex: 0
       cellRect:
         x: 0
-        y: 2
+        y: 0
         width: 15
         height: 27
       spriteId: d20d77a3478dbab4896cd738dd8f4613
@@ -300,7 +300,7 @@ ScriptedImporter:
       frameIndex: 1
       cellRect:
         x: 0
-        y: 2
+        y: 0
         width: 15
         height: 26
       spriteId: 78a087bed8416a646af01e50cd53ceae
@@ -308,7 +308,7 @@ ScriptedImporter:
       frameIndex: 2
       cellRect:
         x: 0
-        y: 2
+        y: 0
         width: 15
         height: 24
       spriteId: ffabc6e5188c24449af8a5534a5142df
@@ -316,7 +316,7 @@ ScriptedImporter:
       frameIndex: 3
       cellRect:
         x: 0
-        y: 2
+        y: 0
         width: 15
         height: 27
       spriteId: 2709a02811a9b4c45b0edc42619471c8
@@ -324,7 +324,7 @@ ScriptedImporter:
       frameIndex: 4
       cellRect:
         x: 0
-        y: 2
+        y: 0
         width: 15
         height: 26
       spriteId: 742fed88bf93f604b9d0f4c262720718
@@ -332,7 +332,7 @@ ScriptedImporter:
       frameIndex: 5
       cellRect:
         x: 0
-        y: 2
+        y: 0
         width: 15
         height: 25
       spriteId: 63e3ae78d5221e84691c791bb73a1f45
@@ -340,7 +340,7 @@ ScriptedImporter:
       frameIndex: 6
       cellRect:
         x: 0
-        y: 2
+        y: 0
         width: 15
         height: 24
       spriteId: 4b94bd4f68b1c6d41b41df2292fb37e0
@@ -348,7 +348,7 @@ ScriptedImporter:
       frameIndex: 7
       cellRect:
         x: 0
-        y: 2
+        y: 0
         width: 15
         height: 25
       spriteId: 492948eddde1752428fd78218573a562
@@ -380,4 +380,4 @@ ScriptedImporter:
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 16, y: 32}
+  canvasSize: {x: 15, y: 27}
