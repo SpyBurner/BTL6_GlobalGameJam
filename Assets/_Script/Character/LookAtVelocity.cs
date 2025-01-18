@@ -9,6 +9,8 @@ public class LookAtVelocity : MonoBehaviour
     private Rigidbody2D rb;
     private SpriteRenderer sr;
     private Vector2 lastVelocity = Vector2.right;
+
+    public bool allowFlip = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +30,7 @@ public class LookAtVelocity : MonoBehaviour
 
         transform.rotation = Quaternion.Euler(0, 0, signedAngle);
         
-        sr.flipY = Vector2.Dot(originalForward, lastVelocity) < 0;
+        if (allowFlip)
+            sr.flipY = Vector2.Dot(originalForward, lastVelocity) < 0;
     }
 }
