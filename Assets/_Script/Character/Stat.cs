@@ -46,6 +46,13 @@ public class Stat : MonoBehaviour, IDamagable
 
     public void OnDeath()
     {
+        ContactDamage[] contactDamages = GetComponentsInChildren<ContactDamage>();
+
+        foreach (var contactDamage in contactDamages)
+        {
+            Destroy(contactDamage);
+        }
+
         //Destroy(gameObject);
     }
 

@@ -198,7 +198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxAir: 100
   currentAir: 0
-  airDrainRate: 0.2
+  airDrainRate: 0.35
   OutOfAirEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -217,6 +217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: {x: 1, y: 0}
+  launchForce: 0
   isHead: 1
   previousNode: {fileID: 0}
   nextNode: {fileID: 0}
@@ -341,7 +342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39345e34e477d7a4b9821f38292b5b89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 1
+  fireRate: 2
   damage: 0
   shootKey: 113
   inventoryKey: 50
