@@ -2018,6 +2018,7 @@ MonoBehaviour:
   smoothSpeed: 0.125
   margin: 0.3
   offset: {x: 0, y: 0, z: 0}
+
 --- !u!1 &1522812856
 GameObject:
   m_ObjectHideFlags: 0
