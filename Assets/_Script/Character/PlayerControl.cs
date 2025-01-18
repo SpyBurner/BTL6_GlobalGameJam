@@ -26,6 +26,13 @@ public class PlayerControl : MonoBehaviour
 
     private Vector2 lastClick;
     private Vector2 lastDirection;
+
+    public void ResetMovement()
+    {
+        lastClick = transform.position;
+        lastDirection = Vector2.up;
+    }
+
     private void Update()
     {
         if (stat.isDead) return;

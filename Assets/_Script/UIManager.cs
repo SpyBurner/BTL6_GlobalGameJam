@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -13,13 +15,27 @@ public class UIManager : MonoBehaviour
     public Canvas UI;
     public PlayerControl player;
     public Transform spawn;
+
+    [Space]
+    public Canvas gameplayCanvas;
+    public Text HPText, AirText, AmmoText;
+
+
     void Start()
     {
         player.gameObject.SetActive(false);
+        UI.enabled = true;
+        gameplayCanvas.enabled = false;
+
+        ammo.OutOfAirEvent.AddListener(() => OpenUI(true));
     }
 
-    public void OpenUI()
+    public void OpenUI(bool discardFish = false)
     {
+        if (discardFish)
+        {
+            Debug.Log("OpenUI called with OutOfAir");
+        }
         //Sell fish
         BubbleNode bubbleNode = player.GetComponentInChildren<BubbleNode>();
         bubbleNode = bubbleNode.nextNode;
@@ -30,7 +46,7 @@ public class UIManager : MonoBehaviour
         {
             FishStat fishStat = bubbleNode.GetComponentInChildren<FishStat>();
 
-            if (fishStat)
+            if (fishStat && !discardFish)
             {
                 totalMoney += fishStat.price;
             }
@@ -52,6 +68,7 @@ public class UIManager : MonoBehaviour
         //Open UI
         player.gameObject.SetActive(false);
         UI.enabled = true;
+        gameplayCanvas.enabled = false;
     }
 
     // Update is called once per frame
@@ -64,11 +81,16 @@ public class UIManager : MonoBehaviour
         priceAirRate.text = gameManager.airRatePrice.ToString();
         money.text = gameManager.Money.ToString() + '$';
         debt.text = gameManager.debt.ToString() + '$';
+
+        HPText.text = playerStat.currentHP + "/" + playerStat.maxHP;
+        AirText.text = ammo.currentAir.ToString("F2") + "/" + ammo.maxAir;
+        AmmoText.text = ammo.currentHarpoon + "/" + ammo.maxHarpoon;
+
     }
     public void upAir()
     {
         if (gameManager.Money < gameManager.airPrice) return;
-        ammo.maxAir += (ammo.maxAir * 10/100);
+        ammo.maxAir += (ammo.maxAir * 20/100);
         gameManager.Money -= gameManager.airPrice;
         gameManager.airPrice += 2;
     }
@@ -105,15 +127,21 @@ public class UIManager : MonoBehaviour
         if (gameManager.Money < gameManager.debt) return;
         gameManager.Money -= gameManager.debt;
         gameManager.debt = 0;
+
+        SceneManager.LoadScene("EndGame");
     }
     public void Play()
     {
         playerStat.currentHP = playerStat.maxHP;
         ammo.currentAir = ammo.maxAir;
         ammo.currentHarpoon = ammo.maxHarpoon;
+
         UI.enabled = false;
+        gameplayCanvas.enabled = true;
+
         player.gameObject.SetActive(true);
         player.GetComponent<Transform>().position = spawn.position;
         player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        player.ResetMovement();
     }
 }

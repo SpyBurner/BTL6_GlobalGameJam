@@ -10,7 +10,7 @@ public class PlayerAmmo : MonoBehaviour
 
     public float airDrainRate;
 
-    public UnityEvent OutOfAirEvent;
+    public UnityEvent OutOfAirEvent = new UnityEvent();
 
     public int maxHarpoon;
     public int currentHarpoon;
@@ -19,8 +19,6 @@ public class PlayerAmmo : MonoBehaviour
     {
         currentAir = maxAir;
         currentHarpoon = maxHarpoon;
-
-        OutOfAirEvent = new UnityEvent();
         
         OutOfAirEvent.AddListener(OnOutOfAir);
     }
@@ -28,13 +26,19 @@ public class PlayerAmmo : MonoBehaviour
     private void Update()
     {
         UseAir(airDrainRate * Time.deltaTime);
+
+        currentHarpoon = Mathf.Clamp(currentHarpoon, 0, maxHarpoon);
+
     }
 
     public void UseAir(float amount)
     {
+        if (currentAir <= 0) return;
+
         currentAir -= amount;
         if (currentAir <= 0)
         {
+            currentAir = 0;
             OutOfAirEvent.Invoke();
         }
     }

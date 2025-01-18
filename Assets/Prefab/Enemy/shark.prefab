@@ -265,7 +265,7 @@ MonoBehaviour:
   target: {fileID: 0}
   patrolDirection: {x: -1, y: 0}
   patrolWallDetectionRange: 0.8
-  detectRange: 8
+  detectRange: 13
   dashCooldown: 0
   dashMultiplier: 0
   dashed: 0
